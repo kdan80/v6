@@ -13,6 +13,7 @@
     "@tailwindcss/vite": "^4.1.17",
     "@types/react": "^19.2.5",
     "@types/react-dom": "^19.2.3",
+    "animejs": "^4.2.2",
     "astro": "^5.15.8",
     "react": "^19.2.0",
     "react-dom": "^19.2.0",

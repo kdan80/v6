@@ -1,7 +1,11 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import HeroIntroIsland from '../components/HeroIntroIsland.tsx';
 ---
 
 <BaseLayout>
   <h1 class="text-3xl font-bold p-6">Hello World</h1>
+
+  <!-- Temporary test animation -->
+  <HeroIntroIsland client:load />
 </BaseLayout>
