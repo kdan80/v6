@@ -1,26 +1,23 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro'
 
-/* ======================================================
-   CONFIGURABLE GRADIENT
-   Change these stops anytime without touching the SVG
-   ====================================================== */
 const gradientStops = [
-    { offset: '0%', color: '#96fff7' }, // brighter, more saturated mint
-    { offset: '50%', color: '#13d5bb' }, // theme green (dominant)
-    { offset: '100%', color: '#0f6f63' }, // slightly darker, still green
+    { offset: '0%', color: '#96fff7' },
+    { offset: '50%', color: '#13d5bb' },
+    { offset: '100%', color: '#0f6f63' },
 ]
 ---
 
 <BaseLayout pageClass="no-layout">
     <div class="fixed inset-0 flex items-center justify-center bg-[#222224]">
-        <div id="animation-stage">
+        <div id="animation-stage" class="flex flex-col items-start">
             <svg
                 id="kd-svg"
                 width="500"
                 height="300"
                 viewBox="0 0 132.29166 79.375"
                 xmlns="http://www.w3.org/2000/svg"
+                style="visibility:hidden; opacity:0;"
             >
                 <defs>
                     <linearGradient
@@ -55,10 +52,39 @@ const gradientStops = [
                 <path
                     id="kd-fill"
                     fill="url(#kd-gradient)"
-                    opacity="0"
+                    opacity="1"
                     d="M 4.4989361,3.9165927 V 73.916462 l 7.4083329,-7.59334 20.741377,-21.25917 21.418337,28.85251 v 0 h 2.53733 21.189393 14.9996 c 19.285954,-8e-5 34.999424,-15.71396 34.999424,-34.99994 0,-19.28597 -15.71347,-34.9998493 -34.999424,-34.9999293 h -1.64949 -10.35029 l -35.54357,36.4313693 4.472097,6.02444 34.193773,-35.047469 h 8.87748 c 15.282194,7e-5 27.591094,12.309379 27.591094,27.591589 0,15.28222 -12.3089,27.59153 -27.591094,27.5916 H 77.793706 57.793373 L 37.888136,39.693742 72.793506,3.9165927 H 62.443213 54.443193 44.092933 L 17.796869,30.869472 v 10.60814 L 47.215733,11.324933 h 8.00002 l -21.79971,22.343849 -5.239464,5.37022 -16.26931,16.67598 v -10.8443 -7.96385 -32.9902393 z"
                 ></path>
             </svg>
+
+            <div
+                id="kd-name"
+                style="
+                    visibility:hidden;
+                    opacity:0;
+                    transform:none;
+                    font-family:'Poppins', sans-serif;
+                    font-size:28px;
+                    font-weight:600;
+                    letter-spacing:2.5px;
+                    color:white;
+                    width:500px;
+                    position:relative;
+                    margin-top:12px;
+                    height:32px;
+                "
+            >
+                <span id="kd-name-k" style="position:absolute; top:0; left:0;">
+                    KIERAN
+                </span>
+
+                <span
+                    id="kd-name-d"
+                    style="position:absolute; top:0; left:203.29px;"
+                >
+                    DANSEY
+                </span>
+            </div>
 
             <script type="module" is:inline>
                 import { runAnim } from '/src/utils/loader-test.ts'
